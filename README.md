@@ -122,7 +122,7 @@ vb@vb-VirtualBox:/etc/fail2ban$ sudo tail -f /var/log/suricata/fast.log
 10/02/2024-20:42:26.162954  [**] [1:2001219:20] ET SCAN Potential SSH Scan [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.10.10:42520 -> 192.168.10.12:22
 10/02/2024-20:42:26.162954  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.10.10:42520 -> 192.168.10.12:22
 ```
-fail2ban не зафиксировал подбора пароля, могу предположить это потому, что делал много попыток и ip попал в блок-лист
+fail2ban не зафиксировал подбора пароля, могу предположить это потому, что делал много попыток и ip попал в блок-лист, в истории тоже не зафиксировано, при этом Hydra получила ошибку при попытке подбора пароля. Дополнительно пвставил логи suricata чтобы было видно, что и пинг и попытки подбора пароля были. Блокировку определенного хоста не ставил. (как вариант, могу предположить, что на пк стоит корпоративный антивирус)
 ```
 vb@vb-VirtualBox:~$ sudo tail -f /var/log/auth.log
 Oct  2 21:11:43 vb-VirtualBox sudo:       vb : TTY=pts/0 ; PWD=/home/vb ; USER=root ; COMMAND=/usr/bin/cat /var/log/fail2ban.log
