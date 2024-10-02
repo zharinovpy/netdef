@@ -123,7 +123,7 @@ vb@vb-VirtualBox:/etc/fail2ban$ sudo tail -f /var/log/suricata/fast.log
 10/02/2024-20:42:26.162954  [**] [1:2003068:7] ET SCAN Potential SSH Scan OUTBOUND [**] [Classification: Attempted Information Leak] [Priority: 2] {TCP} 192.168.10.10:42520 -> 192.168.10.12:22
 ```
 fail2ban не зафиксировал подбора пароля, могу предположить это потому, что делал много попыток и ip попал в блок-лист
----
+```
 vb@vb-VirtualBox:~$ sudo tail -f /var/log/auth.log
 Oct  2 21:11:43 vb-VirtualBox sudo:       vb : TTY=pts/0 ; PWD=/home/vb ; USER=root ; COMMAND=/usr/bin/cat /var/log/fail2ban.log
 Oct  2 21:11:43 vb-VirtualBox sudo: pam_unix(sudo:session): session opened for user root(uid=0) by (uid=1000)
@@ -173,3 +173,4 @@ vb@vb-VirtualBox:~$ sudo tail -f /var/log/suricata/fast.log
 10/02/2024-21:15:48.596387  [**] [1:2100366:8] GPL ICMP_INFO PING *NIX [**] [Classification: Misc activity] [Priority: 3] {ICMP} 192.168.10.10:8 -> 192.168.10.12:0
 10/02/2024-21:15:49.602507  [**] [1:2100366:8] GPL ICMP_INFO PING *NIX [**] [Class
 
+```
